@@ -104,3 +104,4 @@ void howToUse () {
    printf("   inc : +10\% brightness \n"); 
    printf("   dec : -10\% brightness \n"); 
 }    
+
