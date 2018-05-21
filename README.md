@@ -1,9 +1,9 @@
 # brightnessCtl
 after loosing Brightness control some day doing updates on my Laptop. Thanks you /sys
 
-Need root perms at it right in /sys/class...
+Need root perms as it reads /sys/class...
 
-using it with i3 with 
+## i3 integration
 
 ```
   bindsyn XF86MonBrightnessDown exec /home/henrylf/bin/brightness dec
