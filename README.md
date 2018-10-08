@@ -1,7 +1,21 @@
 # brightnessCtl
-after loosing Brightness control some day doing updates on my Laptop. Thanks you /sys
 
-Need root perms as it reads /sys/class...
+Wrote this proram after loosing Brightness control some day doing updates on my Laptop.
+Thanks you /sys/class!
+
+## Compile
+
+```
+  gcc -o brightness brightness.c
+```
+
+## Permissions
+
+Don't forget to give SUID to the `brightness` program. Only root can write `/sys/class`!
+
+```
+  chmod u+s brightness
+```
 
 ## i3 integration
 
