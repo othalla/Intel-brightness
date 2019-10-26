@@ -7,10 +7,22 @@ void howToUse();
 int setBrightness();
 
 int main(int argc,char *argv[]) {
-        if (argc != 2) {
-                printf("Only 1 args must be specified !\nLeaving...\n");
+        if (argc < 2) {
+                printf("at least 1 arg must be specified !\nLeaving...\n");
                 howToUse();
                 exit(1);
+        }
+
+        int ChangePr = 10;
+        if (argc > 2)
+        {
+          int ArgPr = atoi(argv[2]);
+          if (ArgPr > 100 || ArgPr < 1)
+            {
+              printf("percentage must be between 1 and 100.\nLeaving...\n");
+              exit(2);
+            }
+          ChangePr = ArgPr;
         }
 
         int inc = strcmp(argv[1],"inc");
@@ -43,8 +55,8 @@ int main(int argc,char *argv[]) {
 
         // We will change value by 10% for each setBrightness() call inc/dec
         int StepBr;
-        StepBr = MxBr / 10;
-        MnBr = MxBr % 10;
+        StepBr = (MxBr * ChangePr)/ 100;
+        MnBr = (MxBr % ChangePr);
         printf("Incr/Decr unit is done by = %d\n",StepBr);
         printf("Incr/Decr min is  = %d\n",MnBr);
 
@@ -100,7 +112,7 @@ int setBrightness(char const * sys_fs_bright,int newval) {
 
 void howToUse () {
         printf("\nUsage : \n");
-        printf("brightnessctrl (inc|dec) \n");
+        printf("brightnessctrl (inc|dec) [percentage] \n");
         printf("   inc : +10\% brightness \n");
         printf("   dec : -10\% brightness \n");
 }
