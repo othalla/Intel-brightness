@@ -14,6 +14,7 @@ Thanks you /sys/class!
 Don't forget to give SUID to the `brightness` program. Only root can write `/sys/class`!
 
 ```
+  chown root:root brightness
   chmod u+s brightness
 ```
 
